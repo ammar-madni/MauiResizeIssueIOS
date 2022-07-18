@@ -3,40 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiResizeIssueIOS.MainPage">
 			 
-    <ScrollView>
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
+    <ScrollView
+		  VerticalOptions="FillAndExpand">
+		
+		<VerticalStackLayout
+		    Margin="20"
+		    VerticalOptions="FillAndExpand"
+		    BackgroundColor="Purple">
+		
+		    <VerticalStackLayout
+		        Margin="20"
+		        BackgroundColor="Lime"
+		        HeightRequest="600">
+		
+		        <Label Text="Other stuff" />
+		
+		    </VerticalStackLayout>
+		
+		    <Button
+		        Margin="20"
+		        Text="Toggle Address Details"
+		        Clicked="OnToggleClicked"
+		        HorizontalOptions="Center" />
+		
+		    <VerticalStackLayout
+		        x:Name="AddressDetails"
+		        IsVisible="False"
+		        VerticalOptions="FillAndExpand"
+		        BackgroundColor="Orange"
+		        Margin="20">
+		
+		        <Label Text="Address Line 1" />
+		        <Entry Placeholder="1 My Street" />
+		
+		        <Label Text="Address Line 2" />
+		        <Entry Placeholder="" />
+		
+		        <Label Text="Address Line 3" />
+		        <Entry Placeholder="" />
+		
+		        <Label Text="Address Line 4" />
+		        <Entry Placeholder="" />
+		
+		    </VerticalStackLayout>
+		
+		</VerticalStackLayout>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-                
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+	</ScrollView>
  
 </ContentPage>
 
